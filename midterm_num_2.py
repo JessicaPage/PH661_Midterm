@@ -72,12 +72,6 @@ for i in indexer:
 print 'uncertainties in best fit parameters'
 print uncert
 
-'''
-y_best_fit = []
-for i in data_indexer:
-
-	y_best_fit.append(a[0] + a[1]*y_x_data[i][1] + a[2]*y_x_data[i][2] + a[3]*y_x_data[i][3])	
-'''
 
 #.......................................part b.......................................................
 
@@ -137,69 +131,6 @@ print 'uncertainties in best fit parameters'
 print uncert
 
 
-'''
-m_s_var=0.0
-m_val=2
-
-for i,j in zip(sepal_length,sepal_width):
-    m_s_var+=(j-i)**2
-m_s_var=m_s_var/(N-m_val)
-
-print 'model sample variance'
-print m_s_var
-print 'model error'
-model_error=math.sqrt(m_s_var)
-print model_error
-
-sum_y =0.0	
-sum_x=0.0
-for i,j in zip(sepal_length,sepal_width):
-    sum_y+=i
-    sum_x+=j	
-
-mean_y=sum_y/N
-mean_x=sum_x/(N)
-
-cov=0.0
-var=0.0
-
-for i,j in zip(sepal_width,sepal_length):
-    cov+=(i-mean_x)*(j-mean_y)
-    var+=(i-mean_x)**2
-cov=cov/(N-1)
-var = var/(N-1)
-	
-b = cov/var
-
-a=mean_y-b*mean_x
-
-print "b"
-print b	
-print "a"
-print a
-
-def f_x(x,a,b):
-    y = a+b*x
-    return y
-
-f_m=[]
-for i in sepal_width:
-    f_m.append(f_x(i,a,b))
-	
-#plotting
-plt.plot(sepal_width,f_m,color='purple')
-plt.scatter(sepal_width,sepal_length,color='green')
-plt.legend(['best-fit\na={0}\nb={1}'.format(a,b),'data'],loc='upper left')
-plt.xlabel('sepal width')
-plt.ylabel('sepal_length')
-plt.title('9.1 pt. (b)')
-plt.savefig('9_1_plot.png')
-plt.show()	
-
-
-# trying original method ignoring 
-
-'''
 	 
 
     
